@@ -10,6 +10,7 @@ import Foundation
 /// Default config values used by StoreHelper. May be overriden by using a Configuration.plist file in your app's main bundle.
 ///
 /// See `StoreHelper/Samples/Configuration/Configuration.plist` for an example.
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public enum Configuration {
     /// The id for the container shared between the main app and widgets. If nil, the app doesn't have widgets.
     /// Default value is nil.

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-#if os(iOS)
-@available(iOS 15.0, *)
+#if os(iOS) || os(watchOS)
+@available(iOS 15.0, watchOS 9, *)
 public extension Image {
     
     // Read images from the Sources/Resources folder

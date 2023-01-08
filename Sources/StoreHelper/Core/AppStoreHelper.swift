@@ -15,7 +15,7 @@ import StoreKit
 /// the app to the App Store and you have IAP promotions.
 ///
 /// Note that any IAPs made from **inside** the app are processed by StoreKit2 and do not involve this helper class.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public class AppStoreHelper: NSObject, SKPaymentTransactionObserver {
 
     private weak var storeHelper: StoreHelper?
@@ -87,8 +87,10 @@ public class AppStoreHelper: NSObject, SKPaymentTransactionObserver {
     /// ```
     ///
     /// This method is required if you have in-app purchase promotions defined in App Store Connect.
+    #if !os(watchOS)
     public func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
         if let handler = storeHelper?.shouldAddStorePaymentHandler { return handler(payment, product) }
         return true
     }
+    #endif
 }

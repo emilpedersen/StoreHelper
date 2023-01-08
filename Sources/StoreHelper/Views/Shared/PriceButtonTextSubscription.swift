@@ -27,7 +27,7 @@ import StoreKit
 /// each user is only eligible to redeem ONE introductory offer per subscription group.
 /// See https://help.apple.com/app-store-connect/#/deve1d49254f for details.
 ///
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct PriceButtonTextSubscription: View {
     @EnvironmentObject var storeHelper: StoreHelper
     var disabled: Bool

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct MainView: View {
     let largeFlowersId = "com.rarcher.nonconsumable.flowers.large"
     let smallFlowersId = "com.rarcher.nonconsumable.flowers.small"

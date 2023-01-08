@@ -11,7 +11,7 @@
 
 import SwiftUI
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct PurchaseInfoSheet: View {
     @EnvironmentObject var storeHelper: StoreHelper
     @State private var extendedPurchaseInfo: ExtendedPurchaseInfo?
@@ -20,12 +20,12 @@ public struct PurchaseInfoSheet: View {
     private var productId: ProductId
     private var viewModel: PurchaseInfoViewModel
     
-    #if os(iOS)
+    #if os(iOS) || os(watchOS)
     @Binding var showRefundSheet: Bool
     @Binding var refundRequestTransactionId: UInt64
     #endif
     
-    #if os(iOS)
+    #if os(iOS) || os(watchOS)
     public init(showPurchaseInfoSheet: Binding<Bool>,
                 showRefundSheet: Binding<Bool>,
                 refundRequestTransactionId: Binding<UInt64>,
@@ -79,9 +79,10 @@ public struct PurchaseInfoSheet: View {
                     }
                     
                     Divider().padding(.bottom)
-                    
+
+#if !os(watchOS)
                     DisclosureGroup(isExpanded: $showManagePurchase, content: {
-                        #if os(iOS)
+                        #if os(iOS) || os(watchOS)
                         Button(action: {
                             if Utils.isSimulator() { StoreLog.event("Warning: You cannot request refunds from the simulator. You must use the sandbox environment.")}
                             if let tid = epi.transactionId {
@@ -111,6 +112,7 @@ public struct PurchaseInfoSheet: View {
                     }
                     .onTapGesture { withAnimation { showManagePurchase.toggle() }}
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 20))
+#endif
                     
                     Caption2Font(scaleFactor: storeHelper.fontScaleFactor) { Text("You may request a refund from the App Store if a purchase does not perform as expected. This requires you to authenticate with the App Store. Note that this app does not have access to credentials used to sign-in to the App Store.")}
                         .multilineTextAlignment(.center)
@@ -133,7 +135,7 @@ public struct PurchaseInfoSheet: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct PurchaseInfoFieldView: View {
     let fieldName: String
     let fieldValue: String
@@ -156,7 +158,7 @@ struct PurchaseInfoFieldView: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct PurchaseInfoFieldText: View {
     @EnvironmentObject var storeHelper: StoreHelper
     let text: String

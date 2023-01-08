@@ -14,7 +14,7 @@ import StoreKit
 import WidgetKit
 
 /// Displays a single row of product information for the main content List.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct ConsumableView: View {
     @EnvironmentObject var storeHelper: StoreHelper
     @State var purchaseState: PurchaseState = .unknown
@@ -76,7 +76,7 @@ public struct ConsumableView: View {
             PurchaseButton(purchaseState: $purchaseState, productId: productId, price: price)
 
             if purchaseState == .purchased {
-                #if os(iOS)
+                #if os(iOS) || os(watchOS)
                 PurchaseInfoView(showRefundSheet: .constant(false), refundRequestTransactionId: .constant(UInt64.min), productId: productId)
                 #else
                 PurchaseInfoView(productId: productId)
@@ -105,7 +105,7 @@ public struct ConsumableView: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct ConsumableView_Previews: PreviewProvider {
     
     static var previews: some View {

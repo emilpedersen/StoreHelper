@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct Caption2Font<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -21,7 +21,7 @@ public struct Caption2Font<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .caption2, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct CaptionFont<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -34,7 +34,7 @@ public struct CaptionFont<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .caption, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct FootnoteFont<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -47,7 +47,7 @@ public struct FootnoteFont<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .footnote, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct SubHeadlineFont<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -60,7 +60,7 @@ public struct SubHeadlineFont<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .subheadline, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct CalloutFont<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -73,7 +73,7 @@ public struct CalloutFont<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .callout, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct BodyFont<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -86,7 +86,7 @@ public struct BodyFont<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .body, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct Title3Font<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -99,7 +99,7 @@ public struct Title3Font<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .title3, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct Title2Font<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -112,7 +112,7 @@ public struct Title2Font<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .title2, and: scaleFactor )))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct HeadlineFont<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -125,7 +125,7 @@ public struct HeadlineFont<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .headline, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct TitleFont<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -138,7 +138,7 @@ public struct TitleFont<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .title, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct LargeTitleFont<Content: View>: View {
     private var scaleFactor: Double
     private let content: () -> Content
@@ -151,7 +151,7 @@ public struct LargeTitleFont<Content: View>: View {
     public var body: some View { content().font(.system(size: FontUtil.scale(for: .largeTitle, and: scaleFactor)))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct CustomFont<Content: View>: View {
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     private var scaleFactor:        Double
@@ -169,7 +169,7 @@ public struct CustomFont<Content: View>: View {
     public var body: some View { content().font(.custom(name, size: baseSize + (scaleFactor - FontUtil.baseDynamicTypeSize(for: dynamicTypeSize))))}
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct FontUtil {
     /// The point size of the body font for a particular dynamic type size.
     /// See "Dynamic Type Sizes": https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/typography/
@@ -212,7 +212,7 @@ public struct FontUtil {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct TextBlockLeft<Content: View>: View {
     private let content: () -> Content
     

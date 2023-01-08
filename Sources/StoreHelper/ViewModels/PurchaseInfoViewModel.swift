@@ -8,7 +8,7 @@
 import StoreKit
 import SwiftUI
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct ExtendedPurchaseInfo: Hashable {
     public var productId: ProductId                                      // The product's unique id
     public var name: String                                              // The product's display name
@@ -52,7 +52,7 @@ public struct ExtendedPurchaseInfo: Hashable {
 }
 
 /// ViewModel for `PurchaseInfoView`. Enables gathering of purchase or subscription information.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct PurchaseInfoViewModel {
     
     @ObservedObject public var storeHelper: StoreHelper

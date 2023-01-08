@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Displays links for terms of service and privacy policy
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct TermsOfServiceAndPrivacyPolicyView: View {
     @EnvironmentObject var storeHelper: StoreHelper
     @State private var termsOfServiceUrl: URL?

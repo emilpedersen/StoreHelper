@@ -10,7 +10,7 @@ import OrderedCollections
 import SwiftUI
 
 /// Holds information about a subscription transaction in an easy-to-use format.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct SubscriptionTransactionInfo: Hashable {
     /// Information on the result of unwrapping the raw transaction `VerificationResult`.
     public var unwrappedTransaction: UnwrappedVerificationResult<StoreKit.Transaction>

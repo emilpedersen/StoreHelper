@@ -11,7 +11,7 @@
 
 import SwiftUI
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct ProductInfoView: View {
     @EnvironmentObject var storeHelper: StoreHelper
     private var productId: ProductId

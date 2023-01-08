@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-#if os(iOS)
-@available(iOS 15.0, *)
+#if os(iOS) || os(watchOS)
+@available(iOS 15.0, watchOS 9, *)
 public struct SheetBarView: View {
     @State private var showXmark = false
     @Binding var showSheet: Bool

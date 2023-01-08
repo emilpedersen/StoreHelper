@@ -12,19 +12,19 @@
 import SwiftUI
 import StoreKit
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct ProductListViewRow: View {
     @EnvironmentObject var storeHelper: StoreHelper
     private var products: [Product]
     private var headerText: String
     private var productInfoCompletion: ((ProductId) -> Void)
     
-    #if os(iOS)
+    #if os(iOS) || os(watchOS)
     @Binding var showRefundSheet: Bool
     @Binding var refundRequestTransactionId: UInt64
     #endif
     
-    #if os(iOS)
+    #if os(iOS) || os(watchOS)
     public init(showRefundSheet: Binding<Bool>, refundRequestTransactionId: Binding<UInt64>, products: [Product], headerText: String, productInfoCompletion: @escaping ((ProductId) -> Void)) {
         self._showRefundSheet = showRefundSheet
         self._refundRequestTransactionId = refundRequestTransactionId
@@ -51,7 +51,7 @@ public struct ProductListViewRow: View {
                     }
                 } else {
                     ForEach(products, id: \.id) { product in
-                        #if os(iOS)
+                        #if os(iOS) || os(watchOS)
                         ProductView(showRefundSheet: $showRefundSheet, refundRequestTransactionId: $refundRequestTransactionId, productId: product.id, displayName: product.displayName, description: product.description, price: product.displayPrice, productInfoCompletion: productInfoCompletion)
                             .contentShape(Rectangle())
                             .onTapGesture { productInfoCompletion(product.id) }

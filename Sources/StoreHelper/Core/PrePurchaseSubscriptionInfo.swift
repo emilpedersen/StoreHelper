@@ -9,7 +9,7 @@ import StoreKit
 import SwiftUI
 
 /// An optional promo id and localized purchase price and renewal period in a format that may be displayed to the user.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct PurchasePriceForDisplay: Hashable, Identifiable {
     /// The offer's unique id, set in App Store Connect. Will be nil if the offer is an introductory or standard offer.
     public var id: String?
@@ -19,7 +19,7 @@ public struct PurchasePriceForDisplay: Hashable, Identifiable {
 }
 
 /// Information about a subscription product before it's been purchased, including introductory and promotional offers.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct PrePurchaseSubscriptionInfo: Hashable {
     
     /// The product's unique id.

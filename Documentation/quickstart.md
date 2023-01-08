@@ -93,7 +93,7 @@ See [StoreHelperDemo](https://github.com/russell-archer/StoreHelperDemo) for an 
 import SwiftUI
 import StoreHelper
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 @main
 struct StoreHelperDemoApp: App {
     @StateObject var storeHelper = StoreHelper()
@@ -121,7 +121,7 @@ struct StoreHelperDemoApp: App {
 ```swift
 import SwiftUI
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct MainView: View {
     let largeFlowersId = "com.rarcher.nonconsumable.flowers.large"
     let smallFlowersId = "com.rarcher.nonconsumable.flowers.small"
@@ -154,7 +154,7 @@ struct MainView: View {
 import SwiftUI
 import StoreHelper
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct ProductView: View {
     @EnvironmentObject var storeHelper: StoreHelper
     @State private var isPurchased = false
@@ -188,7 +188,7 @@ struct ProductView: View {
 import SwiftUI
 import StoreHelper
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct ContentView: View {
     @State private var showProductInfoSheet = false
     @State private var productId: ProductId = ""
@@ -223,7 +223,7 @@ import SwiftUI
 import StoreHelper
 import StoreKit
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct ProductInfo: View {
     @EnvironmentObject var storeHelper: StoreHelper
     @State private var product: Product?
@@ -259,7 +259,7 @@ struct ProductInfo: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct ProductInfoFlowersLarge: View {
     @ViewBuilder var body: some View {
         Text("This is a information about the **Large Flowers** product.").font(.title2).padding().multilineTextAlignment(.center)
@@ -267,7 +267,7 @@ struct ProductInfoFlowersLarge: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct ProductInfoFlowersSmall: View {
     @ViewBuilder var body: some View {
         Text("This is a information about the **Small Flowers** product.").font(.title2).padding().multilineTextAlignment(.center)
@@ -275,7 +275,7 @@ struct ProductInfoFlowersSmall: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct ProductInfoDefault: View {
     @ViewBuilder var body: some View {
         Text("This is generic information about a product.").font(.title2).padding().multilineTextAlignment(.center)

@@ -9,7 +9,7 @@ import SwiftUI
 import StoreKit
 
 /// Displays text for the price of a consumable or non-consumable product.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct PriceButtonText: View {
     var price: String
     var disabled: Bool

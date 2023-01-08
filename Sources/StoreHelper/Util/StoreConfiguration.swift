@@ -9,7 +9,7 @@ import Foundation
 import OrderedCollections
 
 /// Provides static methods for reading plist configuration files.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct StoreConfiguration {
     
     public init() {}

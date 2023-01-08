@@ -356,7 +356,7 @@ These are the steps required to request localized product information from the A
 - `StoreHelper` is a class that conforms to the `ObservableObject` protocol:
 
 ```swift
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 /// StoreHelper encapsulates StoreKit2 in-app purchase functionality and makes it easy to work with the App Store.
 public class StoreHelper: ObservableObject { ... }
 ```

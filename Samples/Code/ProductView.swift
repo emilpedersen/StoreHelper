@@ -8,7 +8,7 @@
 import SwiftUI
 import StoreHelper
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct ProductView: View {
     @EnvironmentObject var storeHelper: StoreHelper
     @State private var isPurchased = false

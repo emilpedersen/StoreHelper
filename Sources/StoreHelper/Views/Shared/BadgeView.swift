@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Displays a small image that gives a visual clue to the product's purchase state.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct BadgeView: View {
     @Binding var purchaseState: PurchaseState
     
@@ -43,7 +43,7 @@ public struct BadgeView: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct PurchasedView_Previews: PreviewProvider {
     
     static var previews: some View {

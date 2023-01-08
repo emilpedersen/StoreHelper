@@ -11,7 +11,7 @@ import StoreKit
 /// Displays a consumable, non-consumable product's price on a button that enables purchasing. If the product is a subscription,
 /// the price and renewal period is displayed on a button that enables purchasing. If a subscription has one or more eligible offers
 /// then these are displayed in preference to the standard price and renewal period.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct PriceView: View {
     @EnvironmentObject var storeHelper: StoreHelper
     @State private var canMakePayments: Bool = false

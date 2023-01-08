@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct VersionInfo: View {
     @EnvironmentObject var storeHelper: StoreHelper
     @State private var appName = ""

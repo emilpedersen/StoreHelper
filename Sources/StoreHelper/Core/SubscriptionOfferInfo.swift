@@ -9,7 +9,7 @@ import StoreKit
 import SwiftUI
 
 /// Information about a subscription offer
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct SubscriptionOfferInfo: Hashable, Identifiable {
     /// The offer's unique id, set in App Store Connect. Will be nil if the offer is an introductory offer.
     public var id: String?

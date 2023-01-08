@@ -15,7 +15,7 @@ import StoreHelper
 /// For notes on signing promotional subscription offers see the section on **"Introductory and Promotional Subscription Offers"**
 /// in the [StoreHelper Guide](https://github.com/russell-archer/StoreHelper/blob/main/Documentation/guide.md).
 ///
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 struct ContentView: View {
     @State private var showProductInfoSheet = false
     @State private var productId: ProductId = ""

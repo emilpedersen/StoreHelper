@@ -13,19 +13,19 @@ import SwiftUI
 import StoreKit
 
 /// Displays information on a consumable or non-consumable purchase.
-@available(iOS 15.0, macOS 12.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
 public struct PurchaseInfoView: View {
     @EnvironmentObject var storeHelper: StoreHelper
     @State private var purchaseInfoText = ""
     @State private var showPurchaseInfoSheet = false
     private var productId: ProductId
     
-    #if os(iOS)
+    #if os(iOS) || os(watchOS)
     @Binding var showRefundSheet: Bool
     @Binding var refundRequestTransactionId: UInt64
     #endif
     
-    #if os(iOS)
+    #if os(iOS) || os(watchOS)
     public init(showRefundSheet: Binding<Bool>, refundRequestTransactionId: Binding<UInt64>, productId: ProductId) {
         self._showRefundSheet = showRefundSheet
         self._refundRequestTransactionId = refundRequestTransactionId
@@ -57,7 +57,7 @@ public struct PurchaseInfoView: View {
         }
         .task { purchaseInfoText = await viewModel.info(for: productId)}
         .sheet(isPresented: $showPurchaseInfoSheet) {
-            #if os(iOS)
+            #if os(iOS) || os(watchOS)
             PurchaseInfoSheet(showPurchaseInfoSheet: $showPurchaseInfoSheet, showRefundSheet: $showRefundSheet, refundRequestTransactionId: $refundRequestTransactionId, productId: productId, viewModel: viewModel)
             #else
             PurchaseInfoSheet(showPurchaseInfoSheet: $showPurchaseInfoSheet, productId: productId, viewModel: viewModel)
